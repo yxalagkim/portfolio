@@ -9,6 +9,7 @@ import Scrollbar from '@/components/ui/Scrollbar';
 import Cursor from '@/components/ui/Cursor';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://haeun-dev-portfolio.vercel.app'),
   title: 'H.EUN',
   description: 'UI/UX 개발자, 웹 퍼블리셔 김하은 포트폴리오',
   keywords: [
