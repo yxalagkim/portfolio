@@ -1,0 +1,19 @@
+@use "abstracts" as *;
+
+@use "base/reset";
+@use "base/root";
+@use "base/base";
+@use "base/utils";
+
+@use "components/button";
+@use "components/cursor";
+@use "components/scrollbar";
+@use "components/appear";
+@use "components/marquee";
+
+@use "layout/layout";
+@use "layout/header";
+@use "layout/menu";
+@use "layout/footer";
+
+@use "page/main";

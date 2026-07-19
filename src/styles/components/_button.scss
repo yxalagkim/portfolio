@@ -1,0 +1,67 @@
+@use "../abstracts" as *;
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  overflow: hidden;
+  position: relative;
+  padding: .6rem 1.4rem;
+  border: 1px solid var(--color-black);
+  border-radius: 5rem;
+  background-color: var(--color-white);
+  font-size: fluid(16, 32);
+  color: var(--color-black);
+  transition: color .4s var(--ease);
+
+  &__text,
+  &__arrow {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__arrow {
+    width: .5em;
+    height: auto;
+    transform: rotate(90deg);
+  }
+
+  &__ball {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--color-black);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .6s var(--ease);
+  }
+
+  @include hover-only {
+    color: var(--color-white);
+
+    .btn__ball {
+      transform: translate(-50%, -50%) scale(3);
+    }
+  }
+
+  &--circle {
+    width: fluid(40, 80);
+    height: fluid(40, 80);
+    padding: 0;
+    border-radius: 50%;
+
+    .btn__arrow {
+      width: fluid(16, 32);
+      transform: rotate(0);
+    }
+
+    .btn__ball {
+      background-color: var(--color-primary);
+    }
+
+    @include hover-only {
+      color: var(--color-black);
+    }
+  }
+}

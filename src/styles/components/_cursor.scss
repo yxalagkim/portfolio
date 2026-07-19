@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.cursor {
+  @include flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-cursor);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+
+  @include tablet {
+    display: none;
+  }
+
+  &.is-text {
+    overflow: hidden;
+    width: fluid(180, 250);
+    height: 2em;
+    border-radius: 2rem;
+    background-color: var(--color-primary);
+    mix-blend-mode: normal;
+  }
+
+  .marquee__item {
+    align-items: baseline;
+    padding-right: var(--space-md);
+    font-size: fluid(16, 20);
+
+    svg {
+      margin-left: var(--space-xs);
+      transform: rotate(45deg);
+    }
+  }
+}

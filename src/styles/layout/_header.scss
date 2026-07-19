@@ -1,0 +1,79 @@
+@use "../abstracts" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-header);
+  width: 100%;
+  height: var(--header-height);
+  pointer-events: none;
+  will-change: opacity, transform;
+
+  &--light {
+    color: var(--color-white);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo,
+  &__menu-btn {
+    pointer-events: auto;
+  }
+
+  &__logo {
+    svg {
+      display: block;
+      width: fluid(80, 111);
+      height: auto;
+    }
+  }
+
+  &__menu-btn {
+    padding: .6rem 1.4rem;
+    border-radius: 5rem;
+    background-color: var(--color-black);
+    font-size: fluid(14, 24);
+    color: var(--color-white);
+
+    @include hover-only {
+      .header__menu-flip {
+        transform: rotateX(90deg);
+
+        span:first-child {
+          opacity: 0;
+          transform: translateY(-100%);
+        }
+
+        span:last-child {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__menu-flip {
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transition: transform .45s var(--ease);
+
+    span {
+      transition: 
+        opacity .45s var(--ease),
+        transform .45s var(--ease);
+
+      &:last-child {
+        opacity: 0;
+        position: absolute;
+        transform: rotateX(-90deg) translateY(50%);
+        transform-origin: bottom center;
+      }
+    }
+  }
+}

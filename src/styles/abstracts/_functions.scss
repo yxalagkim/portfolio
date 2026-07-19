@@ -1,0 +1,23 @@
+@use "sass:math";
+@use "./variables" as *;
+
+@function rem($px) {
+  @return math.div($px, 10) * 1rem;
+}
+
+@function fluid(
+  $min-size,
+  $max-size,
+  $min-vw: $fluid-min-vw,
+  $max-vw: $fluid-max-vw
+) {
+  $slope: math.div(($max-size - $min-size), ($max-vw - $min-vw));
+  $slope-vw: $slope * 100;
+  $intercept: $min-size - ($slope * $min-vw);
+
+  @return clamp(
+    #{rem($min-size)},
+    #{$slope-vw}vw + #{rem($intercept)},
+    #{rem($max-size)}
+  );
+}

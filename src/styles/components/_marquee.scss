@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.marquee {
+  &__track {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}

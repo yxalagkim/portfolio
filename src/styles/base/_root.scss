@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+:root {
+  // Typography
+  --font-en: var(--font-cabinet-grotesk), var(--font-pretendard), sans-serif;
+  --font-ko: var(--font-pretendard), sans-serif;
+  --font-accent: var(--font-cormorant-upright), sans-serif;
+  --letter-spacing: -.04em;
+
+  // Color
+  --color-primary: #{$color-primary};
+  --color-black: #{$color-black};
+  --color-white: #{$color-white};
+  --color-gray: #{$color-gray};
+
+  // Spacing
+  --space-xs: #{fluid(6, 10)};
+  --space-sm: #{fluid(10, 14)};
+  --space-md: #{fluid(14, 20)};
+  --space-lg: #{fluid(20, 28)};
+  --space-xl: #{fluid(28, 40)};
+  --space-2xl: #{fluid(40, 64)};
+  --space-3xl: #{fluid(64, 96)};
+
+  // Radius
+  --radius: #{fluid(12, 20)};
+
+  // Layout
+  --header-height: var(--space-3xl);
+  --grid-cols: 16;
+  --grid-gap: #{fluid(16, 24)};
+  --gutter: #{fluid(12, 64)};
+
+  // Motion
+  --ease: cubic-bezier(.4, 0, .2, 1);
+
+  // Z-index
+  --z-index-header: 1000;
+  --z-index-menu: 1000;
+  --z-index-scrollbar: 1000;
+  --z-index-cursor: 2000;
+  --z-index-intro: 3000;
+  --z-index-noise: 4000;
+
+  @include mobile {
+    --grid-cols: 6;
+  }
+}

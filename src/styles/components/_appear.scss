@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.appear-text {
+  > div {
+    overflow: hidden;
+  }
+
+  > div > * {
+    display: block;
+    transform: translateY(100%) skewY(1deg);
+  }
+
+  &.is-visible {
+    > div > * {
+      transform: translateY(0) skewY(0);
+      transition:
+        opacity .45s ease-out,
+        transform .45s ease-out;
+      transition-delay: calc(.05s * var(--i));
+    }
+  }
+}
+
+.appear-chars {
+  overflow: hidden;
+
+  > * {
+    display: block;
+    opacity: 0;
+    transform: translateY(100%) skewY(1deg);
+  }
+
+  &.is-visible {
+    > * {
+      opacity: 1;
+      transform: translateY(0) skewY(0);
+      transition:
+        opacity .45s ease-out,
+        transform .45s ease-out;
+      transition-delay: calc(.05s * var(--i));
+    }
+  }
+}
