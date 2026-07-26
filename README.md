@@ -1,10 +1,9 @@
 # Portfolio
 
-## 💡 Tech Stack
-Next.js, TypeScript, SCSS, GSAP, Lenis, Matter.js
+🚀 **[Live Demo](https://haeun-dev-portfolio.vercel.app/)**
 
-## 🔗 URL
-https://haeun-dev-portfolio.vercel.app/
+## 💡 Tech Stack
+Next.js · TypeScript · SCSS · GSAP · Lenis · Matter.js
 
 ## 📸 Preview
 ![Image](https://github.com/user-attachments/assets/c3c41458-5d7d-43ca-9ddf-ca04f11b8325)
